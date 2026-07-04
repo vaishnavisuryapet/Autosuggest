@@ -20,10 +20,45 @@
             <p>One million phrases. Four algorithms. Prefix Based Auto Suggest</p>
             <span>
                 <span class="lens">&#128269;</span>
-                 <input class="search-box" placeholder="start typing here"></span><br><br>     
+                 <input class="search-box" id="search-box" placeholder="start typing here"></span><br><br>     
                  <div id="suggestion-box">
-                    suggestion-box
+                    <!-- suggestion-box -->
                  </div>
         </div>
+        <script>
+            var searchbox=document.getElementById("search-box");
+            var suggestionbox=document.getElementById("suggestion-box");
+
+            searchbox.addEventListener("input",function(){
+                //1 :get user typed text
+                var userInput=searchbox.value;
+                if(userInput.trim()===""){
+
+                }
+                else{
+                    var url1="https://autosuggest-backend.onrender.com/api/autosuggest?q=";
+                    var url3="&algorithm=brute&limit=10&weighted=false"
+                    var url=url1+userInput+url3;
+                }
+                //2. make api call to get suggestion
+                fetch(url).then(function(response){
+                    return response.json();
+                })
+                .then(function(data){
+                    console.log(data);
+                    var resultsArray=data.results;
+                    var htmlresults="";
+                    for(var i=0;i<resultsArray.length;i++){
+                        htmlresults+="<div id='suggestion-item'>"+resultsArray[i].text+"</div>"
+                    }
+
+                    suggestionbox.innerHTML=htmlresults;
+
+
+                })
+                //3. display data in HTML
+            })
+
+        </script>
     </body>
 </html>

@@ -22,16 +22,16 @@
 }
 .lens{
     position: relative;
-    left: 3%;
+    left: 4%;
 }
 .search-box{
     padding: 15px 15px 15px 45px;
     border-radius: 30px;
     width: 40%;
 }
-#suggestion-box{
-    border: 1px solid black;
-    width:45%;
-    margin: auto;
-    margin-left: 29%;
+#suggestion-item{
+    /* border: 1px solid black; */
+    border: 1px solid gray;
+    padding: 10px;
+    border-radius:10px;
 }
