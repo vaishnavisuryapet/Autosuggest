@@ -1,0 +1,37 @@
+.container{
+    text-align: center;
+    border: 3px solid #e20b0b;
+    justify-content: center;
+    padding: 10px;
+    border-color: rgba(78,79,80,0.636);
+    border-radius: 10px;
+    
+}
+.left-bar{
+  position: fixed;
+  top:20px;
+    left: 20px;
+}
+.right-bar{
+    position: fixed;
+    top:20px;
+    right: 20px;
+}
+.head1{
+    color:blue;
+}
+.lens{
+    position: relative;
+    left: 3%;
+}
+.search-box{
+    padding: 15px 15px 15px 45px;
+    border-radius: 30px;
+    width: 40%;
+}
+#suggestion-box{
+    border: 1px solid black;
+    width:45%;
+    margin: auto;
+    margin-left: 29%;
+}
